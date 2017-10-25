@@ -1,6 +1,7 @@
 package proxy;
 
 import org.omg.DynamicAny.DynAnyPackage.InvalidValueHelper;
+import singleton.BestSingleton;
 
 import java.lang.reflect.InvocationHandler;
 import java.lang.reflect.Proxy;
@@ -32,5 +33,6 @@ public class Main {
         Class planeClazz = plane.getClass();
         IFly iFly = (IFly) Proxy.newProxyInstance(planeClazz.getClassLoader(),planeClazz.getInterfaces(),handler);
         iFly.fly();
+
     }
 }
